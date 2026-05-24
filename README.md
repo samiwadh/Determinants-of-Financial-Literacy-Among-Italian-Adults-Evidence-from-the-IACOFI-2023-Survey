@@ -117,11 +117,10 @@ The final score is created by combining the relevant positive and correct respon
 .
 ├── data/
 │   └── database_eng.dta
-├── notebooks/
-│   └── analysis.ipynb
-├── output/
-│   ├── figures/
-│   └── results/
+├── pipeline Code/
+│   ├── Financial Literacy Among Italian Adults.ipynb
+|   ├── figures
+|   └── cleaned_financial_literacy_data.csv
 ├── README.md
 └── report.pdf
 ```
