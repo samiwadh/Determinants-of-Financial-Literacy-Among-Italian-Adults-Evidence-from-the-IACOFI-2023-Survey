@@ -2,10 +2,10 @@
 
 ## 📌 Project Overview
 
-This project analyzes the determinants of financial literacy among Italian adults using the **IACOFI 2023 survey dataset**.  
-The study explores how **demographic, educational, socioeconomic, and digital factors** influence financial knowledge, behavior, and attitudes.
+This project analyzes the determinants of financial literacy among Italian adults using the **IACOFI 2023 survey dataset** from the Bank of Italy.  
+The study investigates how **demographic, educational, socioeconomic, and digital factors** influence financial knowledge, behavior, and attitudes.
 
-The goal is to construct a **financial literacy score** and identify the most significant predictors using statistical and machine learning techniques.
+The main goal is to construct a **financial literacy score** and identify the most relevant predictors using statistical analysis and machine learning techniques.
 
 ---
 
@@ -17,25 +17,25 @@ To investigate:
 
 ---
 
-## ❓ Sub-Questions
+## ❓ Research Questions
 
 - Does education level influence financial literacy?
-- Are there demographic differences (age, gender, region)?
-- Is digital financial behavior associated with higher literacy?
+- Are there demographic differences in financial literacy by age, gender, and region?
+- Is digital financial behavior associated with higher financial literacy?
 - Which factors are the strongest predictors of financial literacy?
 
 ---
 
 ## 📂 Dataset
 
-- **Source:** Bank of Italy – IACOFI 2023 Survey  
-- **Type:** Cross-sectional survey data (.dta format)  
-- **Population:** Italian adults  
-- **Methodology:** OECD-INFE financial literacy framework  
+- **Source:** Bank of Italy – IACOFI 2023 Survey
+- **Format:** Cross-sectional survey data (`.dta`)
+- **Population:** Italian adults aged 18–79
+- **Framework:** OECD-INFE financial literacy methodology
 
 The dataset includes:
-- Demographic variables (age, gender, region, etc.)
-- Socioeconomic indicators (education, income, employment)
+- Demographic variables such as age, gender, and region
+- Socioeconomic indicators such as education, income, and employment status
 - Digital behavior variables
 - Financial knowledge, behavior, and attitude questions
 
@@ -44,69 +44,124 @@ The dataset includes:
 ## ⚙️ Methodology
 
 ### 1. Data Preprocessing
-- Loaded `.dta` file using `pandas`
-- Handled missing values (`-97`, `-98`, `-99`)
-- Cleaned and filtered relevant variables
+- Loaded the `.dta` file using `pandas`
+- Replaced missing and invalid codes such as `-97`, `-98`, and `-99`
+- Cleaned and filtered the relevant variables
 
 ### 2. Feature Engineering
-- Constructed **Financial Knowledge Score**
-- Combined correct responses from OECD-style questions
-- Created structured analytical dataset
+- Constructed financial knowledge, behavior, and attitude scores
+- Combined the components into an overall financial literacy score
+- Created a digital finance score from online financial activity variables
 
-### 3. Exploratory Data Analysis (EDA)
-- Distribution of financial literacy scores
-- Group comparisons (education, gender, age)
-- Correlation analysis
+### 3. Exploratory Data Analysis
+- Analyzed score distributions
+- Compared groups by education, gender, and age
+- Examined correlations among the main variables
 
 ### 4. Statistical Modeling
-- Multiple Linear Regression
-- Analysis of feature importance
-- Interpretation of coefficients
+- Applied multiple linear regression
+- Studied the influence of key predictors
+- Interpreted coefficients and model fit
 
-### 5. (Optional Extension)
-- Clustering analysis for financial profiles
+### 5. Clustering Analysis
+- Applied K-means clustering to identify broad financial profiles
+- Used PCA and the elbow method to select the number of clusters
 
 ---
 
 ## 🧠 Financial Literacy Score Construction
 
-The financial literacy score is built using OECD-INFE methodology:
+The financial literacy score is based on the OECD-INFE framework and includes three dimensions:
 
-- **Knowledge Component** (financial concepts understanding)
-- **Behavior Component** (saving, budgeting habits)
-- **Attitude Component** (financial decision mindset)
+- **Knowledge**: understanding of financial concepts
+- **Behavior**: saving, budgeting, and planning habits
+- **Attitudes**: mindset toward long-term financial decision-making
 
-Final score = sum of correct/positive responses across components.
+The final score is created by combining the relevant positive and correct responses across these dimensions.
 
 ---
 
 ## 📊 Key Variables
 
-### Demographic
-- Gender (QD1)
-- Age (QD7)
-- Region (QD2)
+### Demographic Variables
+- Gender (`QD1`)
+- Age (`QD7`)
+- Region (`QD2`)
 
-### Socioeconomic
-- Education (QD9)
-- Income (QD13)
-- Employment status (QD10)
+### Socioeconomic Variables
+- Education (`QD9`)
+- Income (`QD13`)
+- Employment status (`QD10`)
 
-### Digital Behavior
-- Internet access (QD14)
-- Online financial activity (QP8, QP9)
+### Digital Behavior Variables
+- Internet access (`QD14`)
+- Online financial activity (`QP8`, `QP9`)
 
 ---
 
 ## 🧪 Technologies Used
 
-- Python 🐍
-- Pandas & NumPy
-- Matplotlib & Seaborn
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
 - Scikit-learn
-- Stats & Regression Models
 - Jupyter Notebook
 
 ---
 
 ## 📁 Project Structure
+
+```bash
+.
+├── data/
+│   └── database_eng.dta
+├── notebooks/
+│   └── analysis.ipynb
+├── output/
+│   ├── figures/
+│   └── results/
+├── README.md
+└── report.pdf
+```
+
+---
+
+## 📈 Main Outputs
+
+- Data cleaning and preprocessing workflow
+- Financial literacy score construction
+- Exploratory visualizations
+- Correlation analysis
+- Regression results
+- Clustering-based profiling of respondents
+
+---
+
+## 📌 Main Findings
+
+The analysis suggests that:
+
+- Education is one of the strongest predictors of financial literacy.
+- Digital financial behavior is positively associated with financial literacy.
+- Gender differences are relatively small.
+- Regional and age-related patterns exist but are less pronounced than education effects.
+
+---
+
+## 🚀 Future Work
+
+Possible extensions of this project include:
+- Robustness checks using alternative scoring methods
+- Separate subgroup analyses by age or region
+- Additional clustering methods
+- Comparison with future survey waves
+
+
+
+---
+
+## 📎 Reference
+
+Bank of Italy, **IACOFI 2023 – Surveys on Financial Literacy and Digital Financial Skills in Italy**
