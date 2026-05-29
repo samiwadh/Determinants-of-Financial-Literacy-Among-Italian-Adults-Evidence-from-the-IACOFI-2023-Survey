@@ -93,10 +93,6 @@ The final score is created by combining the relevant positive and correct respon
 - Income (`QD13`)
 - Employment status (`QD10`)
 
-### Digital Behavior Variables
-- Internet access (`QD14`)
-- Online financial activity (`QP8`, `QP9`)
-
 ---
 
 ## 🧪 Technologies Used
